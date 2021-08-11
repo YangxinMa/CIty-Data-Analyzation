@@ -100,8 +100,8 @@ def main(in_directory):
 
 
 if __name__ == '__main__':
-    # in_directory = sys.argv[1]
-    in_directory = 'pics/'
+    in_directory = sys.argv[1]
+    # in_directory = 'pics/'
     main(in_directory)
 
 # In[ ]:
