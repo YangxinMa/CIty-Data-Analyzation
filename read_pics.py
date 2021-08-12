@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[4]:
 
 
 import sys
@@ -84,7 +84,7 @@ def read_pics(src):
     files = os.listdir(src)  # Getting the files to copy
     locations = []
     for idx, image_src in enumerate(files):
-        if image_src.endswith('.jpg'):
+        if (image_src.endswith('.jpg')):
             a = get_exif(f'{src}{image_src}')
             lat = get_lat(a)
             lon = get_lon(a)
@@ -93,15 +93,16 @@ def read_pics(src):
     return locations
 
 
-def main(in_directory):
-    locations = read_pics(in_directory)
+def main():
+    # read coordinates of your pics
+    locations = read_pics('pics/')
+
+    # write to file
     data = pd.DataFrame(locations, columns=['lat', 'lon'])
-    data.to_csv('locations.csv', index=False)
+    data.to_csv('data/locations.csv', index=False)
 
 
 if __name__ == '__main__':
-    in_directory = sys.argv[1]
-    # in_directory = 'pics/'
-    main(in_directory)
+    main()
 
 # In[ ]:
