@@ -43,4 +43,13 @@ Work Done By Yangxin Ma:
     Run python3 Hotel_AirBnb_Select.py
 
 Work Done By Xiaohang Hu:
+1. Marked chain restauratnts in different color in map.
+   Run python3 rest_rain.py
+2. Cluster chain restauratnts and not chain restauratnt in map.
+   Run python3 rest_rain.py
+3. Create Pie graph to show percentage of chain restauratnts and not chain restauratnt in different cities.
+   Run python3 ChainVsNotChain.py
+4. using chi2_test to get pvalue to show whether some place has more restauratnts.
+   Run python3 ChainVsNotChain.py
+   
     
