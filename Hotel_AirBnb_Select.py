@@ -100,7 +100,7 @@ def main():
         else:
             folium.Marker(centers[point],icon=folium.Icon(color='red')).add_to(vmap)
 
-    vmap.save("Hotel_AirBnb_Select.html")
+    vmap.save("html/Hotel_AirBnb_Select.html")
 
 
 # In[5]:

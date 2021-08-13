@@ -150,7 +150,7 @@ def main():
 
     route_map = routes_map(G_walk,routes)
 
-    route_map.save('route.html')
+    route_map.save('html/route.html')
 
 
 # In[8]:
