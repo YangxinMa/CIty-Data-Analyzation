@@ -15,6 +15,7 @@ import analize_city
 #https://stackoverflow.com/questions/59857949/how-to-add-cluster-markers-to-choropleth-with-folium
 #https://stackoverflow.com/questions/42756934/how-to-plot-lat-and-long-from-pandas-dataframe-on-folium-map-group-by-some-label#
 #https://georgetsilva.github.io/posts/mapping-points-with-folium/
+#my friend xiaotong teach me how to marker restaurants in different and recommend me many used website to create map.
 def ColorPoint(df, map_osm):
     if df['name'] == 'McDonald':
         r = 'blue'
@@ -45,7 +46,6 @@ def chainCluster(df, map_osm):
 
 
 def main():
-    city= pd.read_csv('wiki_grade.csv')
     data = pd.read_json('amenities-vancouver.json.gz', lines=True)
     McDonand = data[data['name']=="McDonald's"]
     White_Spot = data[data['name']=="White Spot"]
@@ -59,9 +59,7 @@ def main():
     chain_restaurants=chain_restaurants[['lat', 'lon', 'tags', 'name']]
     localchain=chain_restaurants[['lat', 'lon', 'name']]
     Vancouver = [49.282730, -123.120735]
-    #https://stackoverflow.com/questions/59857949/how-to-add-cluster-markers-to-choropleth-with-folium
-    #https://stackoverflow.com/questions/42756934/how-to-plot-lat-and-long-from-pandas-dataframe-on-folium-map-group-by-some-label#
-    #https://georgetsilva.github.io/posts/mapping-points-with-folium/
+
     m = folium.Map(location=Vancouver,zoom_start=12)
     localchain.apply(ColorPoint, axis=1,map_osm=m)
     #markerRest = plugins.MarkerCluster().add_to(m)
@@ -95,8 +93,7 @@ def main():
     NotChain.apply(chainCluster, axis=1, map_osm=marker_cluster)
     marker_cluster.save("NotChainsCluster.html")
     
-    #city of chain
-    city['city'] = city.apply(analize_city.give_city_name, axis=1)
+    
     
 
 
