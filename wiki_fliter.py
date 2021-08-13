@@ -96,5 +96,5 @@ df_wiki.loc[:,'catagorities'] = df_wiki['amenity'].apply(set_catagorities)
 
 df_wiki.loc[:,'entry_len'] = np.vectorize(entry_len)(df_wiki['entry_num'], client)
 
-df_wiki.to_csv('data/wiki_grades.csv',index = False)
+df_wiki.to_csv('data/wiki_grade.csv',index = False)
 

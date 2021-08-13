@@ -100,7 +100,7 @@ def routes_map(G_walk, routes):
 
 def main():
     
-    df = pd.read_csv('wiki_grades.csv')
+    df = pd.read_csv('data/wiki_grade.csv')
     
     df['city'] = df.apply(analize_city.give_city_name, axis=1)
     

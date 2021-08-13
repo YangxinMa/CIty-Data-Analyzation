@@ -31,7 +31,7 @@ from collections import Counter
 
 
 def main():
-    df = pd.read_csv('wiki_grades.csv')
+    df = pd.read_csv('data/wiki_grade.csv')
     df = df[df['amenity'] == 'restaurant']
     df['city'] = df.apply(analize_city.give_city_name, axis=1)
     df = df[df['city'] == 'Vancouver']
@@ -91,7 +91,7 @@ def main():
     #All restaurants location points. 
     for point in range(0, len(coors)):
         folium.Marker(coors[point],icon=folium.Icon(color='blue')).add_to(vmap)
-    vmap.save("restaurants_vancouver.html")
+    vmap.save("html/restaurants_vancouver.html")
     
     #All center location points.The black one is the best one. 
     for point in range(0, len(centers)):
