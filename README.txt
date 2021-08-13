@@ -14,6 +14,19 @@ from geopy.geocoders import Nominatim  #using pip install geopy
 from folium import plugins
 from folium.plugins import MarkerCluster
 import seaborn
+import numpy as np
+import osmnx as ox
+import networkx as nx
+from wikidata.client import Client
+import math
+import random
+import matplotlib.pyplot as plt
+from kneed import KneeLocator
+from sklearn.datasets import make_blobs
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from collections import Counter
+
 Work Done By Xubin Wang: Get Photos, Form Trip Route and City Analyze
 1. Read EXIF data from images
 	Run python3 read_pic.py 
@@ -22,6 +35,12 @@ Work Done By Xubin Wang: Get Photos, Form Trip Route and City Analyze
 3. Analize data of Cities
     Run python3 analize_city.py
 Work Done By Yangxin Ma:
+1. Data fliter:
+    Run python3 wiki_fliter.py
+2. Provide a tour path of a city
+    Run python3 tour_plan.py
+3. Find a good hotel/AirBnb location
+    Run python3 Hotel_AirBnb_Select.py
 
 Work Done By Xiaohang Hu:
     
